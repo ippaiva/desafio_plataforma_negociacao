@@ -1,0 +1,104 @@
+.content-wrapper {
+    background-color: #ecf0f5;
+}
+
+.content-header {
+    padding          : 15px;
+    position         : relative;
+    background-color : #3C8DBC;
+    color            : #FFFFFF;
+}
+
+.content-header > h1 {
+    font-size : 24px;
+    margin    : 0;
+}
+
+.content-header > .breadcrumb {
+    background    : transparent none repeat scroll 0 0;
+    border-radius : 2px;
+    float         : right;
+    font-size     : 12px;
+    margin-bottom : 0;
+    margin-top    : 0;
+    padding       : 7px 5px;
+    position      : absolute;
+    right         : 10px;
+    top           : 15px;
+    color         : #FFFFFF;
+}
+
+.breadcrumb > .active {
+    color : #FFFFFF;
+}
+
+.breadcrumb > li > a {
+    color : #FFFFFF;
+}
+
+.content {
+    margin-left  : auto;
+    margin-right : auto;
+    margin-top   : 50px;
+    min-height   : 600px;
+    padding      : 15px;
+}
+
+.box {
+    background    : #ffffff none repeat scroll 0 0;
+    border-radius : 3px;
+    border-top    : 3px solid #d2d6de;
+    box-shadow    : 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom : 20px;
+    position      : relative;
+    width         : 100%;
+}
+
+.box.box-primary {
+    border-top-color: #3c8dbc;
+}
+
+.box-header {
+    color    : #444;
+    display  : block;
+    padding  : 10px;
+    position : relative;
+}
+
+.box-header.with-border {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.box-body {
+    border-radius : 0 0 3px 3px;
+    padding       : 10px;
+}
+
+.box-footer {
+    background-color : #fff;
+    border-radius    : 0 0 3px 3px;
+    border-top       : 1px solid #f4f4f4;
+    padding          : 10px;
+}
+
+.box-width {
+    width  : 80%;
+    margin : 0 auto;
+}
+
+.box-width-ver {
+    width  : 50%;
+    margin : 0 auto;
+}
+
+.strip_grid {
+    background-color: #f9f9f9;
+}
+
+.strip_grid_none {
+    background-color: #FFFFFF;
+}
+
+.btn-acao {
+    margin: 3px;
+}
