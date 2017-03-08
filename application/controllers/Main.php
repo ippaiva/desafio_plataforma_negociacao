@@ -215,4 +215,31 @@ class Main extends CI_Controller
         print json_encode($resposta);
     }
 
+    /**
+     * Método de cadastro de tipo de mercadoria
+     *
+     * @method createTipoMercadoria
+     * @access public
+     * @return obj Status da ação
+     */
+    public function createTipoMercadoria()
+    {
+        $tp_mercadoria = new stdClass();
+        $retorno       = new stdClass();
+        $resposta      = "";
+
+        $tp_mercadoria->tipo_mercadoria = $this->input->post('tp_mercadoria');
+
+        if ($tp_mercadoria->tipo_mercadoria != NULL) {
+            $resposta = $this->Negociacao_model->setTipoMercadoria($tp_mercadoria);
+        } else {
+            $retorno->status = FALSE;
+            $retorno->msg    = "Houve um erro ao cadastrar! Tente novamente...";
+            $resposta        = $retorno;
+        }
+
+        # retornar resultado
+        print json_encode($resposta);
+    }
+
 }

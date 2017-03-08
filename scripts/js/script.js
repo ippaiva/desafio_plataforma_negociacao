@@ -14,12 +14,68 @@ Negociacao = {
         $('#btn_cadastro').click(function(){
             Negociacao.redirect('./main/cadastrar');
         });
+        
+        // Cadastrar Tipo Mercadoria
+        $('#btn_tp_mercadoria').click(function(){
+           $("#modal_tp_mercadoria").modal('show');
+        });
 
         // Mascara
         Negociacao.onlyNumber('qtde');
         $(".vl_money").maskMoney({
             thousands : '.',
             decimal   : ','
+        });
+
+        // Cadastrar Tipo de Mercadoria
+        $('#frm_cad_tp_mercadoria').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                tp_mercadoria: {
+                    validators: {
+                        notEmpty: {
+                            message: '&Eacute; obrigat&oacute;rio o preenchimento do campo <strong>TIPO DE MERCADORIA</strong>'
+                        },
+                        stringLength: {
+                            min: 2,
+                            max: 50,
+                            message: 'O campo <strong>TIPO DE MERCADORIA</strong> deve ter entre <strong>2</strong> e <strong>150</strong> caracteres'
+                        }
+                    }
+                },
+            }
+        }).on('success.form.bv', function (e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            var frm = $form.serialize();
+            var url = "/desafio_plataforma_negociacao/main/createTipoMercadoria";
+
+            // Use Ajax to submit form data
+            $.post(url, frm, function (data) {
+                if (data.status === true) {
+                    Negociacao.modalMsg("MENSAGEM", data.msg);
+                    $("#modal_tp_mercadoria").modal('hide');
+                    // Inserir no select
+                    var option = "<option value='"+data.dados.id+"'>"+data.dados.tipo+"</option>"
+                    $("#id_tipo_mercadoria").append(option);
+                } else {
+                    Negociacao.modalMsg("Aten&ccedil;&atilde;o", data.msg);
+                }
+
+                $('#btn_tp_mercadoria').removeAttr('disabled');
+            }, 'json');
+
         });
 
         // Mercadoria Cadastrar

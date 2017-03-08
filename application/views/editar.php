@@ -40,7 +40,7 @@ $id_tp_negociacao = isset($negociacao[0]->id_tipo_negociacao_fk) ? $negociacao[0
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
                                         <div class="form-group">
-                                            <label for="id_tipo_mercadoria">Tipo de Mercadoria<span class="text-danger">*</span></label>
+                                            <label for="id_tipo_mercadoria">Tipo de Mercadoria<span class="text-danger">*</span> <i class="fa fa-plus-circle" id="btn_tp_mercadoria" aria-hidden="true" title="Cadastrar Tipo de Mercadoria"></i></label>
                                             <select class="form-control" name="id_tipo_mercadoria" id="id_tipo_mercadoria" required="true" autofocus="true">
                                                 <option value="">Selecione</option>
                                                 <?php
@@ -124,4 +124,45 @@ $id_tp_negociacao = isset($negociacao[0]->id_tipo_negociacao_fk) ? $negociacao[0
 
     </div>
 
+</div>
+
+<!-- Cadastrar Tipo Mercadoria -->
+<div class="modal fade" id="modal_tp_mercadoria">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+                <h4 class="modal-title">Cadastrar Tipo de Mercadoria</h4>
+            </div>
+            <div class="modal-body" style="background-color: #ECF0F5">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box box-width">
+                            <form role="form" name="frm_cad_tp_mercadoria" id="frm_cad_tp_mercadoria">
+                                <div class="box-header with-border">
+                                    <span class="text-danger">*</span> Campo com preenchimento obrigatório
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="tp_mercadoria">Tipo de Mercadoria<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="tp_mercadoria" name="tp_mercadoria" placeholder="Tipo de Mercadoria" maxlength="50" value="" required="true" autofocus="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-footer text-center">
+                                    <button type="submit" id="btn_tp_mercadoria" name="btn_tp_mercadoria" class="btn btn-success">Cadastrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
 </div>

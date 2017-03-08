@@ -102,3 +102,9 @@
 .btn-acao {
     margin: 3px;
 }
+
+.fa-plus-circle {
+    cursor    : pointer;
+    font-size : 20px;
+    color     : #449D44;
+}
