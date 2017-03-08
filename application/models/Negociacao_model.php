@@ -208,6 +208,43 @@ class Negociacao_model extends CI_Model
         return $retorno;
     }
 
+    /**
+     * Método responsável por cadastrar Tipo de Mercadoria
+     *
+     * @method setTipoMercadoria
+     * @param obj $valores Dados para cadastro
+     * @access public
+     * @return obj Status de ação
+     */
+    public function setTipoMercadoria($valores)
+    {
+        # Atribuir vars
+        $retorno = new stdClass();
+        $dados   = array();
+
+        # Dados
+        $dados['tipo_mercadoria'] = $valores->tipo_mercadoria;
+
+        # Grava
+        $this->db->insert('tb_tipo_mercadoria', $dados);
+
+        if ($this->db->affected_rows() > 0)
+        {
+            $retorno->status = TRUE;
+            $retorno->msg    = "Cadastro realizado com Sucesso!";
+            $retorno->dados  = array('id' => $this->db->insert_id(), 'tipo' => $valores->tipo_mercadoria);
+        }
+        else
+        {
+            $retorno->status = FALSE;
+            $retorno->msg    = "Houve um erro ao cadastrar! Tente novamente...";
+            $retorno->dados  = NULL;
+        }
+
+        # retornar
+        return $retorno;
+    }
+    
 }
 
 /* End of file setor_model.php */
