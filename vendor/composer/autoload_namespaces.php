@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'org\\bovigo\\vfs' => array($vendorDir . '/mikey179/vfsStream/src/main/php'),
+    'Pimple' => array($vendorDir . '/pimple/pimple/lib'),
+    'Herrera\\Pdo' => array($vendorDir . '/herrera-io/pdo-log/src/lib', $vendorDir . '/herrera-io/silex-pdo/src/lib'),
 );
